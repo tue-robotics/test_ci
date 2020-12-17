@@ -12,8 +12,8 @@ jobs:
           if [ "$GITHUB_EVENT_NAME" == "pull_request" ]
           then
             echo "event: pull_request"
-            oldest_commit=${{ github.event.base.sha }}
-            newest_commit=${{ github.event.head.sha }}
+            oldest_commit=${{ github.pull_request.base.sha }}
+            newest_commit=${{ github.pull_request.head.sha }}
           elif [ "$GITHUB_EVENT_NAME" == "push" ]
           then
             echo "event: push"
